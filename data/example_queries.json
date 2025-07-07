@@ -1,0 +1,18 @@
+[
+  {
+    "nlq": "Show all declined transactions for e-commerce merchants",
+    "sql": "SELECT * FROM transactions t JOIN merchants m ON t.merchant_id = m.id WHERE t.status = 'declined' AND m.category = 'E-commerce';"
+  },
+  {
+    "nlq": "Which issuers approved the most payments in June?",
+    "sql": "SELECT i.name, COUNT(*) FROM transactions t JOIN issuers i ON t.issuer_id = i.id WHERE t.status = 'approved' AND strftime('%m', t.timestamp) = '06' GROUP BY i.name ORDER BY COUNT(*) DESC;"
+  },
+  {
+    "nlq": "Total Visa transaction amount per acquirer",
+    "sql": "SELECT a.name, SUM(t.amount) FROM transactions t JOIN acquirers a ON t.acquirer_id = a.id WHERE t.network = 'Visa' GROUP BY a.name;"
+  },
+  {
+    "nlq": "List all Mastercard payments above $100",
+    "sql": "SELECT * FROM transactions WHERE network = 'Mastercard' AND amount > 100;"
+  }
+]

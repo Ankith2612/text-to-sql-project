@@ -1,0 +1,13 @@
+[
+  "The 'transactions' table contains card transaction data with fields like card_number, merchant_id, acquirer_id, issuer_id, amount, currency, status, timestamp, and network.",
+  "Each 'transactions' row represents a card payment attempt. Status can be approved, declined, or pending.",
+  "The 'merchants' table stores merchant info including name, category, and location.",
+  "The 'acquirers' table describes acquiring banks processing transactions, joined via acquirer_id.",
+  "The 'issuers' table describes issuing banks (e.g., Wells Fargo, Citi), joined via issuer_id.",
+  "The 'network' column defines whether a transaction is Visa, Mastercard, etc.",
+  "NLQ: Show all declined transactions for e-commerce merchants → SQL: SELECT * FROM transactions t JOIN merchants m ON t.merchant_id = m.id WHERE t.status = 'declined' AND m.category = 'E-commerce';",
+  "NLQ: Which issuers approved the most payments in June? → SQL: SELECT i.name, COUNT(*) FROM transactions t JOIN issuers i ON t.issuer_id = i.id WHERE t.status = 'approved' AND strftime('%m', t.timestamp) = '06' GROUP BY i.name ORDER BY COUNT(*) DESC;",
+  "NLQ: Total Visa transaction amount per acquirer → SQL: SELECT a.name, SUM(t.amount) FROM transactions t JOIN acquirers a ON t.acquirer_id = a.id WHERE t.network = 'Visa' GROUP BY a.name;",
+  "NLQ: List all Mastercard payments above $100 → SQL: SELECT * FROM transactions WHERE network = 'Mastercard' AND amount > 100;"
+]
+

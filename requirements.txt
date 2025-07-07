@@ -1,0 +1,11 @@
+chromadb==0.4.24
+sentence-transformers==2.6.1
+sqlite-utils==3.35  # optional, helpful for debugging SQLite
+uvicorn==0.30.1     # useful if you expose this via API
+fastapi==0.111.0    # optional, if you're planning to wrap it in a web API
+numpy==1.26.4
+flask
+flask-cors
+requests
+sentence-transformers
+chromadb

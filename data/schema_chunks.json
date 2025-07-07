@@ -1,0 +1,7 @@
+[
+  "The 'transactions' table contains card transaction data with fields like card_number, merchant_id, acquirer_id, issuer_id, amount, currency, status, timestamp, and network.",
+  "Each 'transactions' row represents a card payment attempt. Status can be approved, declined, or pending.",
+  "The 'merchants' table stores merchant info including name, category, and location.",
+  "The 'acquirers' table describes acquiring banks processing transactions, joined via acquirer_id.",
+  "The 'issuers' table describes issuing banks (e.g., Wells Fargo, Citi), joined via issuer_id."
+]
