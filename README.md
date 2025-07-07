@@ -17,7 +17,7 @@ A full-stack, production-ready application that translates **natural language qu
 ---
 
 ## 🧱 Tech Stack
-
+--------------------------------------------
 | Layer        | Tool                      |
 |--------------|---------------------------|
 | LLM          | Mistral 7B via Ollama     |
@@ -27,10 +27,10 @@ A full-stack, production-ready application that translates **natural language qu
 | Frontend     | React                     |
 | DB Engine    | SQLite                    |
 | Dev Support  | Docker, virtualenv, curl  |
-
----
+--------------------------------------------
 
 ## 📐 Architecture
+
 
 
 # 📦 Setup on macOS with pyenv
@@ -51,5 +51,27 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Run the app
-python app.py
+# Run the backend app
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Start Ollama and load Mistral model
+ollama run mistral
+
+# Run the backend API
+python -m api.server.py
+
+# Run the Frontend App
+cd frontend/
+npm install
+npm start
+
+# Sample Prompt
+Use the following schema and examples to answer the question:
+Schema:
+- Table: transactions (id, amount, network, status)
+Question: Show all Mastercard payments over $200
+
+
+
