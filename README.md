@@ -64,7 +64,9 @@ python -m api.server.py
 
 # Run the Frontend App
 cd frontend/
+
 npm install
+
 npm start
 
 # Sample Prompt
