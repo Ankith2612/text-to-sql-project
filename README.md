@@ -30,6 +30,7 @@ A full-stack, production-ready application that translates **natural language qu
 --------------------------------------------
 
 ## 📐 Architecture
+![image](https://github.com/user-attachments/assets/51518b66-b8db-4abd-b610-b89522922f45)
 
 
 
